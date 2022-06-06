@@ -8,13 +8,16 @@ type Props = {
 }
 
 function Feed({ subreddit }: Props) {
-  const { data, error } = !subreddit
-    ? useQuery(GET_POSTS)
-    : useQuery(GET_POSTS_BY_TOPIC, {
-        variables: {
-          topic: subreddit,
-        },
-      })
+  const { data, error } = useQuery(
+    !subreddit ? GET_POSTS : GET_POSTS_BY_TOPIC,
+    !subreddit
+      ? {}
+      : {
+          variables: {
+            topic: subreddit,
+          },
+        }
+  )
 
   const posts: Post[] = !subreddit
     ? data?.getPostList
