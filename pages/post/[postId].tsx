@@ -37,7 +37,7 @@ function PostPage() {
 
   const onSubmit: SubmitHandler<FormData> = async (formData) => {
     // post comment
-    console.log(formData)
+
     const notification = toast.loading('Posting comment...')
 
     await addComment({
