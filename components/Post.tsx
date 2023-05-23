@@ -151,7 +151,7 @@ function Post({ post, noHover = false }: Props) {
                 <GiftIcon className="h-6 w-6 hidden sm:inline" />
                 <p className="hidden sm:inline">Award</p>
               </div>
-              <div className="postButtons hidden sm:inline">
+              <div className="postButtons hidden sm:inline-flex">
                 <ShareIcon className="h-6 w-6" />
                 <p className="hidden sm:inline">Share</p>
               </div>

@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import Avatar from '../../components/Avatar'
 import Feed from '../../components/Feed'
 import Postbox from '../../components/Postbox'
+import Head from 'next/head'
 
 function Subreddit() {
   const {
@@ -9,6 +10,14 @@ function Subreddit() {
   } = useRouter()
   return (
     <div className="h-24 bg-red-400 p-8">
+       <Head>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=0.7"
+          />
+          <title>Reddit Clone</title>
+          <link rel="icon" href="/reddit-logo.svg" />
+        </Head>
       <div className="-mx-8 mt-10 bg-white">
         <div className="mx-auto flex max-w-5xl items-center space-x-4 pb-3">
           <div className="-mt-6 pl-2">

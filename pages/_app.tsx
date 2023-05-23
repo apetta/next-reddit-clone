@@ -11,17 +11,17 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <ApolloProvider client={client}>
       <SessionProvider session={session}>
+        <Head>
+          <meta charSet="utf-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=0.8"
+          />
+          <title>Reddit Clone</title>
+          <link rel="icon" href="/reddit-logo.svg" />
+        </Head>
         <Toaster />
         <div className="h-full min-h-screen overflow-y-scroll bg-slate-200 min-w-fit">
-          <Head>
-            <meta charSet="utf-8" />
-            <meta
-              name="viewport"
-              content="width=device-width,initial-scale=1"
-            />
-            <title>Reddit Clone</title>
-            <link rel="icon" href="/reddit-logo.svg" />
-          </Head>
           <Header />
           <Component {...pageProps} />
         </div>
