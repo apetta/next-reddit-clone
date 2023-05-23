@@ -11,7 +11,7 @@ function Avatar({ seed, large, sub = false }: Props) {
   const { data: session } = useSession()
   return (
     <div
-      className={`relative h-10 w-10 overflow-hidden rounded-full border-gray-300 bg-white ${
+      className={`relative h-10 w-10 overflow-hidden rounded-full border-gray-300 bg-white shrink-0 ${
         large && 'h-20 w-20'
       }`}
     >

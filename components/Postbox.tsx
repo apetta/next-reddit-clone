@@ -118,7 +118,7 @@ function Postbox({ subreddit }: Props) {
   return (
     <form
       onSubmit={onSubmit}
-      className="sticky top-16 z-50 rounded-md border border-gray-300 bg-white p-2"
+      className="sticky top-16 z-50 rounded-md border border-gray-300 bg-white p-2 mx-2"
     >
       <div className="flex items-center space-x-3">
         <Avatar />
@@ -138,11 +138,11 @@ function Postbox({ subreddit }: Props) {
 
         <PhotographIcon
           onClick={() => setImageBoxOpen(!imageBoxOpen)}
-          className={`h-6 cursor-pointer text-gray-400 ${
+          className={`h-6 cursor-pointer text-gray-400 shrink-0 ${
             imageBoxOpen && 'text-blue-300'
           }`}
         />
-        <LinkIcon className="h-6 w-6 text-gray-400" />
+        <LinkIcon className="h-6 w-6 text-gray-400 shrink-0" />
       </div>
 
       {!!watch('postTitle') && (

@@ -1,7 +1,5 @@
 import { useQuery } from '@apollo/client'
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useEffect } from 'react'
 import Feed from '../components/Feed'
 import Postbox from '../components/Postbox'
 import SubredditRow from '../components/SubredditRow'
@@ -17,11 +15,7 @@ const Home: NextPage = () => {
   const subreddits: Subreddit[] = data?.getSubredditListLimit
   return (
     <div className=" max-w-5xl my-7 mx-auto">
-      <Head>
-        <title>Reddit Clone</title>
-        <link rel="icon" href="/reddit-logo.svg" />
-      </Head>
-
+      
       <Postbox />
 
       {/* Feed */}

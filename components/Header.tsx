@@ -43,7 +43,7 @@ function Header() {
       </div>
 
       {/* Search */}
-      <form className="flex flex-1 items-center space-x-2 rounded-sm border border-gray-200 px-3 py-1 bg-gray-100">
+      <form className="sm:flex flex-1 items-center space-x-2 rounded-sm border border-gray-200 px-3 py-1 bg-gray-100 hidden">
         <SearchIcon className="h-6 w-6 text-gray-400" />
         <input
           className="flex-1 outline-none bg-transparent"
@@ -65,20 +65,22 @@ function Header() {
         <PlusIcon className="icon" />
         <SpeakerphoneIcon className="icon" />
       </div>
-      <div className="ml-5 flex items-center lg:hidden">
-        <MenuIcon className=" icon" />
-      </div>
 
-      {/* Sign in / Sign out */}
-      <div
-        onClick={() => (session ? signOut() : signIn())}
-        className="hidden items-center lg:flex space-x-2 border border-gray-100 p-2 cursor-pointer"
-      >
-        <UserCircleIcon className="h-5 w-5 flex-shrink-0 text-gray-500" />
-        <p className="text-gray-400 truncate">
-          {session ? session?.user?.name : 'Sign In'}
-        </p>
-        {session && <ChevronDownIcon className="h-5 w-5 text-gray-400" />}
+      <div className="flex flex-1 justify-end sm:flex-initial">
+        {/* Sign in / Sign out */}
+        <div
+          onClick={() => (session ? signOut() : signIn())}
+          className="items-center flex space-x-2 border border-gray-100 p-2 cursor-pointer ml-2"
+        >
+          <UserCircleIcon className="h-5 w-5 flex-shrink-0 text-gray-500" />
+          <p className="text-gray-400 truncate">
+            {session ? session?.user?.name : 'Sign In'}
+          </p>
+          {session && <ChevronDownIcon className="h-5 w-5 text-gray-400" />}
+        </div>
+        <div className="px-4 flex items-center lg:hidden justify-center">
+          <MenuIcon className=" icon" />
+        </div>
       </div>
     </div>
   )
